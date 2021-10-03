@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <!--Toobar-->
+      <v-app-bar 
+      absolute
+      dark
+      shrink-on-scroll
+      src="https://cdna.artstation.com/p/assets/images/images/011/726/368/4k/berube-jonathan-berube-art-director-matte-192.jpg?1531092197"
+      scroll-target="#scrolling-techniques-2"
+      >
+
+        <v-toolbar-title>Bag of Holding</v-toolbar-title>
+      </v-app-bar>
+      <v-data-table         
+      :headers="headers"
+      :items="items"
+      sort-by="weight"
+      class="elevation-1"
+      >
+      <v-toolbar flat>
+        <v-toolbar-title>Your Bag</v-toolbar-title>
+        <v-divider
+        class="mx-4"
+        inset
+        vertical
+        ></v-divider>
+        <v-spacer></v-spacer>
+        <v-dialog></v-dialog>
+      </v-toolbar>
+
+      </v-data-table>
+
+      <v-btn absolute bottom right>
+      <v-icon>mdi-plus</v-icon>
+      New Item
+      </v-btn>
+
+    </v-app>
+  </div>
+  <!-- JS & Vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
