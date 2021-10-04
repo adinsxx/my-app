@@ -12,6 +12,11 @@ var vm = new Vue({
     }),  
 
     data: () => ({
+      snackbar: false,
+      text: 'New item added',
+      timeout: 2000,
+      drawer: false,
+      group: null,
       dialog: false,
       dialogDelete: false,
       headers: [

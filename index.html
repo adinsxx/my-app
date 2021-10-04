@@ -45,6 +45,7 @@
         </v-list>
       </v-navigation-drawer>
 
+      <template>
       <v-data-table :headers="headers" :items="items" sort-by="weight" class="elevation-1">
         <template v-slot:top>
           <v-toolbar flat>
@@ -99,7 +100,7 @@
                   <v-btn color="blue darken-1" text @click="close">
                     Cancel
                   </v-btn>
-                  <v-btn color="blue darken-1" text @click="save">
+                  <v-btn color="blue darken-1" text @click="save" @click="snackbar = true">
                     Save
                   </v-btn>
                 </v-card-actions>
@@ -132,7 +133,33 @@
           </v-btn>
         </template>
       </v-data-table>
+    </template>
 
+    <v-snackbar
+    v-model="snackbar"
+    :timeout="timeout"
+  >
+    {{ text }}
+
+    <template v-slot:action="{ attrs }">
+      <v-btn
+        color="blue"
+        text
+        v-bind="attrs"
+        @click="snackbar = false"
+      >
+        Close
+      </v-btn>
+    </template>
+  </v-snackbar>
+    <v-footer padless>
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>Bag of Holding</strong>
+      </v-col>
+    </v-footer>
 
 
 
