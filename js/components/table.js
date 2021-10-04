@@ -1,9 +1,7 @@
-const { CardPlugin } = require("bootstrap-vue");
-
-Vue.component('Card', {
+Vue.component('Table', {
     props: {
-        card: {
-            type: Card,
+        table: {
+            type: Table,
             required: true,
         },
     },
@@ -179,5 +177,4 @@ Vue.component('Card', {
           this.close()
         },
       },
-
 })
