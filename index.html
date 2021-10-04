@@ -45,15 +45,25 @@
         </v-list>
       </v-navigation-drawer>
 
-      <v-data-table :headers="headers" :items="desserts" sort-by="calories" class="elevation-1">
+      <v-data-table :headers="headers" :items="items" sort-by="weight" class="elevation-1">
         <template v-slot:top>
           <v-toolbar flat>
             <v-toolbar-title>My Bag</v-toolbar-title>
             <v-divider class="mx-4" inset vertical></v-divider>
             <v-spacer></v-spacer>
+            
             <v-dialog v-model="dialog" max-width="500px">
               <template v-slot:activator="{ on, attrs }">
-                <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
+                <!-- <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
+                  New Item
+                </v-btn> -->
+                <v-btn
+                dark
+                class="mb-2"
+                v-bind="attrs"
+                v-on="on"
+              >                  
+              <v-icon>mdi-plus</v-icon>
                   New Item
                 </v-btn>
               </template>
@@ -66,19 +76,19 @@
                   <v-container>
                     <v-row>
                       <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.name" label="Dessert name"></v-text-field>
+                        <v-text-field v-model="editedItem.name" label="Item Name"></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.calories" label="Calories"></v-text-field>
+                        <v-text-field v-model="editedItem.weight" label="Weight (g)"></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.fat" label="Fat (g)"></v-text-field>
+                        <v-text-field v-model="editedItem.rarity" label="Rarity of item (%)"></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.carbs" label="Carbs (g)"></v-text-field>
+                        <v-text-field v-model="editedItem.cost" label="Cost of item ($)"></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.protein" label="Protein (g)"></v-text-field>
+                        <v-text-field v-model="editedItem.type" label="Type of item"></v-text-field>
                       </v-col>
                     </v-row>
                   </v-container>
@@ -125,10 +135,7 @@
 
 
 
-      <v-btn absolute bottom right>
-        <v-icon>mdi-plus</v-icon>
-        New Item
-      </v-btn>
+
 
     </v-app>
   </div>
