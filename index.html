@@ -20,7 +20,7 @@
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
         <v-toolbar-title>Bag of Holding</v-toolbar-title>
-        <v-img v-bind="props" gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"></v-img>
+        <v-img gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"></v-img>
 
 
       </v-app-bar>
@@ -44,18 +44,10 @@
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
-      <MyTable :></MyTable>
-      <Snackbar></Snackbar>
 
 
-    <v-footer padless>
-      <v-col
-        class="text-center"
-        cols="12"
-      >
-        {{ new Date().getFullYear() }} — <strong>Bag of Holding</strong>
-      </v-col>
-    </v-footer>
+
+
 
 
 
@@ -66,7 +58,8 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/components/table.js"></script>
+  <script src="js/app-components.js"></script>
+  <script src="js/app-models.js"></script>
 </body>
 
 </html>

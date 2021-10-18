@@ -1,19 +1,30 @@
 Vue.use(Vuetify);
 
-var vm = new Vue({
-    //mounts vue instance to existing DOM element
-    //Stands for element
-    //Mounting to the whole app
-    el: "#app",
+
+const app = new Vue({
+    // el: the DOM element to be replaced with a Vue instance
+    el: '#app',
     vuetify: new Vuetify({
         theme: {
             dark: true
         },
     }),  
-//Nav bar drawers
+    // data: all the data for the app
     data: () => ({
-      drawer: false,
-      group: null,
-    }),
-  
+        drawer: false,
+        group: null,
+      }),
+    // methods: usually "events" triggered by v-on:
+    methods: {
+
+    },
+    // computed: values that are updated and cached if dependencies change
+    computed: {
+
+    },
+    //mounted:  called after the instance has been mounted,
+    mounted: function() {
+
+    },
+
 });
